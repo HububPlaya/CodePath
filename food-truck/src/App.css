@@ -1,40 +1,111 @@
-.background_container {
-background-color: #d2f8d2;
+.App {
+  margin-left: 60px;
+  margin-right: 60px;
+  color: #000;
 }
 
-.main_container {
-  background-color: #CCFFFF;
-  position: relative;
+body {
+  margin: 0;
   display: flex;
-  justify-content: center;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  margin: 0;
+  text-align: center;
+}
+
+
+.Header {
+  display: block;
+}
+
+.Header img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+.Header h1 {
+  font-size: 75px;
+  line-height: 1.1;
+  text-shadow: black 1px 0 10px;
+  padding-bottom: 18px;
+  margin-left: 50px;
+  color: #fff;
+  display: block; 
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.Header img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+.Header h1 {
+  font-size: 75px;
+  line-height: 1.1;
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1400px;
-  height: 100vh;
-  flex-direction: column;
-
+  justify-content: space-between;
 }
 
-.main_container h1 {
-color: white;
-font-size: 90px;
-text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
-margin-bottom: 500px;
-margin-left:auto;
-margin-right:auto;
+.Card {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.card_info {
+  color: #000;
+  background-color: #fff;
+  padding-bottom: 20px;
+  box-shadow: 0 15px 25px #817c7c33;
+  font-size: medium;
+  border-radius: 14px;
+  backdrop-filter: blur(2px);
+  text-align: center;
+  margin-bottom: 30px;
+  height: 450px;
 }
 
-.main_container img {
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-margin-left: auto;
-margin-right:auto
+.card_info img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
 }
 
-.card_container button {
-  color: white;
-  
+.card_info h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
+
+.card_info h4 {
+  margin-top: 0;
+  font-size: 18px;
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.card_info a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+
+

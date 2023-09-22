@@ -1,15 +1,15 @@
 import React from 'react';
-import './App.css'
+
 
 const Card = (props) => {
     return (
-
-        <div>
-            <img src={props.src} />
-            <h3>{props.name}</h3>
-            <h5>{props.type}</h5>
-            <button>View Menu</button>
-        </div>
-    
+    <>
+    <img src={props.img} />
+    <h3>{props.restaurant}</h3>
+    <h4>{props.food_type}</h4>
+    <button><a href={props.link}>View Menu</a></button>
+    </>
     )
 }
+
+export default Card;
