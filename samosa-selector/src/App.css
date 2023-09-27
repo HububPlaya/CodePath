@@ -28,18 +28,15 @@ h2 {
 .samosa {
   height: 15em;
   padding: 1.5em;
+  margin: 0 auto;
+  text-align: center;
   will-change: filter;
   transition: transform .1s;
 }
 
-img {
-  overflow-clip-margin: content-box;
-  overflow: clip;
-}
-
 .Container {
-  margin-top: 50px;
   display: flex;
+  margin-top: 50px;
 }
 
 .upgrade {
@@ -51,6 +48,7 @@ img {
   line-height: .5;
 }
 
+
 .upgrade h3 {
   display: block;
   font-size: 1.17em;
@@ -61,23 +59,15 @@ img {
   font-weight: bold;
 }
 
-.upgrade p {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-}
-
 .upgrade button {
   border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.3em 1em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
-    color: #ffffffde;
-    cursor: pointer;
-    margin-top: 10px;
+  border: 1px solid transparent;
+  padding: 0.3em 1em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: #ffffffde;
+  cursor: pointer;
+  margin-top: 10px;
 }

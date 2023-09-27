@@ -1,12 +1,13 @@
 import React from 'react';
 
-const Upgrade = () => {
+const Upgrade = (props) => {
     return (
-        <div className="upgrade">
-            <h3>Header Text</h3>
-            <p>Paragraph Text</p>
-            <button>Button Text</button>
-        </div>
+        <>
+        <h3>{props.packageName}</h3>
+        <p>{props.numPerClick}</p>
+        <button>{props.addSamosa}</button>
+        </>
+        
     )
 }
 
