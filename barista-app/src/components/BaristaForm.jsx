@@ -30,30 +30,30 @@ const BaristaForm = () => {
     };
 
     const onCheckAnswer = () => {
-        if(trueRecipe.temp != inputs['temperature']) {
+        if (trueRecipe.temp != inputs['temperature']){
             setCheckTemperature('wrong');
-        }
-        else {
-            setCheckTemperature('correct')
-        }
-        if(trueRecipe.milk != inputs['milk']) {
+          }
+          else {
+            setCheckTemperature("correct");
+          }
+          if (trueRecipe.milk != inputs['milk']){
             setCheckMilk('wrong');
-        }
-        else {
-            setCheckMilk('correct')
-        }
-        if(trueRecipe.syrup != inputs['syrup']) {
+          }
+          else {
+            setCheckMilk("correct");
+          }
+          if (trueRecipe.syrup != inputs['syrup']){
             setCheckSyrup('wrong');
-        }
-        else {
-            setCheckSyrup('correct')
-        }
-        if(trueRecipe.blended != inputs['blended']) {
+          }
+          else {
+            setCheckSyrup("correct");
+          }
+          if (trueRecipe.blended != inputs['blended']){
             setCheckBlended('wrong');
-        }
-        else {
-            setCheckBlended('correct')
-        }
+          }
+          else {
+            setCheckBlended("correct");
+          }
     };
 
     const onNewDrink = () => {
@@ -83,46 +83,74 @@ const BaristaForm = () => {
                 <button type="new-drink-button" className="button newDrink" onClick={onNewDrink}></button>
             </div>
             <form>
-            <h3>Temperature</h3>
-            <div className="answer-space" id={correct_temp}>
-                {inputs['temperature']}
+            <div className="mini-container">
+                <h3>Temperature</h3>
+                <div className="answer-space" id={checkTemperature}>
+                    {inputs["temperature"]}
+                </div>
+                <RecipeChoices
+                    handleChange={(e) =>
+                        setInputs((prevState) => ({
+                            ...prevState,
+                            [e.target.name]: e.target.value,
+                        }))
+                    }
+                    label="temperature"
+                    choices={ingridients["temperature"]}
+                    currentVal={inputs["temperature"]}
+                />
             </div>
-            <RecipeChoices
-                handleChange={handleChange}
-                label="temperature"
-                choices={ingridients['temperature']}
-                checked={inputs['temperature']}
-            />
-            <h3>Milk</h3>
-            <div className="answer-space" id={correct_milk}>
-                {inputs['milk']}
+            <div className="mini-container">
+                <h3>Milk</h3>
+                <div className="answer-space" id={checkMilk}>
+                    {inputs["milk"]}
+                </div>
+                <RecipeChoices
+                    handleChange={(e) =>
+                        setInputs((prevState) => ({
+                            ...prevState,
+                            [e.target.name]: e.target.value,
+                            }))
+                        }
+                    label="milk"
+                    choices={ingridients["milk"]}
+                    currentVal={inputs["milk"]}
+                />
             </div>
-            <RecipeChoices
-                handleChange={handleChange}
-                label="milk"
-                choices={ingridients['milk']}
-                checked={inputs['milk']}
-            />
-            <h3>Syrup</h3>
-            <div className="answer-space" id={correct_syrup}>
-                {inputs['syrup']}
+            <div className="mini-container">
+                <h3>Syrup</h3>
+                <div className="answer-space" id={checkSyrup}>
+                    {inputs["syrup"]}
+                </div>
+                <RecipeChoices
+                    handleChange={(e) =>
+                        setInputs((prevState) => ({
+                            ...prevState,
+                            [e.target.name]: e.target.value,
+                        }))
+                    }
+                    label="syrup"
+                    choices={ingridients["syrup"]}
+                    currentVal={inputs["syrup"]}
+                />
             </div>
-            <RecipeChoices
-                handleChange={handleChange}
-                label="syrup"
-                choices={ingridients['syrup']}
-                checked={inputs['syrup']}
-            />
-            <h3>Blended</h3>
-            <div className="answer-space" id={correct_blend}>
-                {inputs['blended']}
+            <div className="mini-container">
+                <h3>Blended</h3>
+                <div className="answer-space" id={checkBlended}>
+                    {inputs["blended"]}
+                </div>
+                <RecipeChoices
+                    handleChange={(e) =>
+                        setInputs((prevState) => ({
+                            ...prevState,
+                            [e.target.name]: e.target.value,
+                        }))
+                    }
+                    label="blended"
+                    choices={ingridients["blended"]}
+                    currentVal={inputs["blended"]}
+                />
             </div>
-            <RecipeChoices
-                handleChange={handleChange}
-                label="blended"
-                choices={ingridients['blended']}
-                checked={inputs['blended']}
-            />
             </form>
             <button type="submit" className="button submit" onClick={onCheckAnswer}>
                 Check Answer
