@@ -1,12 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-const RecipeChoices = () => {
-    const handleChange = () => {}
+const RecipeChoices = ({ choices, label, handleChange, checked }) => {
     return (
         <>
-        <div>
-            {choices && 
-                choices.map((choice) => (
+            <div>
+                {choices && choices.map((choice) => (
                     <li key={choice}>
                         <input
                             id={choice}
@@ -14,14 +12,14 @@ const RecipeChoices = () => {
                             name={label}
                             type="radio"
                             onChange={handleChange}
-                            checked = {checked == choice}
+                            checked={checked === choice}
                         />
                         {choice}
                     </li>
                 ))}
-        </div>
+            </div>
         </>
-    )
-}
+    );
+};
 
 export default RecipeChoices;
