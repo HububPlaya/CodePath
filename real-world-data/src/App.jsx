@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import APIForm from '../components/APIForm';
+import Gallery from '../components/Gallery';
 
 const ACCESS_KEY = import.meta.env.VITE_APP_ACCESS_KEY;
 
@@ -104,7 +105,9 @@ const App = () => {
         </p>
       </div>
       <br />
+      <div><Gallery images={prevImage}/></div>
     </div>
+   
   );
 };
 
