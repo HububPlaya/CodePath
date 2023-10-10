@@ -60,16 +60,28 @@ const App = () => {
   };
 
   const callAPI = async (query) => {
-    const response = await fetch(query);
-    const json = await response.json();
-    if (json.url === null) {
-      alert('Oops! Something went wrong with that query, let\'s try again!');
-    } else {
-      setCurrentImage(json.url);
-      setPrevImage((images) => [...images, json.url])
-      reset();
+    try {
+      const response = await fetch(query);
+  
+      if (!response.ok) {
+        throw new Error(`API request failed with status: ${response.status}`);
+      }
+  
+      const json = await response.json();
+  
+      if (json.url) {
+        setCurrentImage(json.url);
+        setPrevImage((images) => [...images, json.url]);
+        reset();
+      } else {
+        alert('Oops! Something went wrong with that query. Please try again.');
+      }
+    } catch (error) {
+      console.error('API request failed:', error);
+      alert('Oops! Something went wrong. Please try again later.');
     }
   };
+  
 
   return (
     <div className="whole-page">
